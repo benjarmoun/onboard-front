@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
+
+<!-- component -->
+<div class="flex h-screen ">
+  <div class="flex-1 flex flex-col overflow-hidden">
+    <app-header></app-header>
+    <div class="flex h-full">
+      <nav class="flex w-72 h-full bg-gray-50">
+        <div class="w-full flex mx-auto p-4 ">
+
+          <aside class="flex w-72 flex-col space-y-2 border-r-2 border-gray-200 bg-white p-2" style="height: 90.5vh">
+            <a  routerLink="/" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
+              <span class="text-2xl"><i class="bx bx-home"></i></span>
+              <span>Dashboard</span>
+            </a>
+
+            <a  routerLink="/register" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
+              <span class="text-2xl"><i class="bx bx-user-plus"></i></span>
+              <span>Add Employee</span>
+            </a>
+
+            <a  routerLink="/transfer" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
+              <span class="text-2xl"><i class="bx bx-calendar"></i></span>
+              <span>Leave</span>
+            </a>
+
+            <a  routerLink="/deposit" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
+              <span class="text-2xl"><i class="bx bx-user-minus"></i></span>
+              <span>Absence</span>
+            </a>
+
+            <a  routerLink="/withdraw" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
+              <span class="text-2xl"><i class="bx bx-history"></i></span>
+              <span>Overtime</span>
+            </a>
+
+            <a href="#" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
+              <span class="text-2xl"><i class="bx bx-user"></i></span>
+              <span>Profile</span>
+            </a>
+          </aside>
+          <!--          <div class="w-full h-full flex items-center justify-center text-gray-900 text-xl border-4 border-gray-900 border-dashed">Sidebar</div>-->
+        </div>
+      </nav>
+      <main class="flex flex-col w-full bg-white overflow-x-hidden overflow-y-auto mb-14">
+        <div class="flex w-full mx-auto py-7">
+          <div class="flex flex-col w-full h-full text-gray-900 text-xl ">
+
+            <!-- This is an example component -->
+            <app-employee-details></app-employee-details>
+            <!--            <app-requests></app-requests>-->
+            <router-outlet></router-outlet>
+
+          </div>
+        </div>
+      </main>
+      <!--      <nav class="flex w-72 h-full bg-yellow-400">-->
+      <!--        <div class="w-full flex mx-auto px-6 py-8">-->
+      <!--          <div class="w-full h-full flex items-center justify-center text-gray-900 text-xl border-4 border-gray-900 border-dashed">Rightbar</div>-->
+      <!--        </div>-->
+      <!--      </nav>-->
+    </div>
+  </div>
+</div>
+
+<style>
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(13deg, #7bcfeb 14%, #e685d3 64%);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(13deg, #c7ceff 14%, #f9d4ff 64%);
+  }
+  ::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: inset 7px 10px 12px #f0f0f0;
+  }
+</style>

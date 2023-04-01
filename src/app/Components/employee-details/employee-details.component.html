@@ -1,0 +1,31 @@
+<div class='flex items-center justify-center '>
+  <div class="rounded-xl border p-4 shadow-md w-11/12 bg-white">
+    <div class="flex w-full items-center justify-between border-b pb-3">
+      <div class="flex items-center space-x-3">
+        <div class="text-lg font-bold text-slate-700">Contract</div>
+      </div>
+      <div class="flex items-center ">
+        <div class="rounded-2xl border bg-neutral-100 px-2 py-1 text-xs font-semibold">{{this.contractType}}</div>
+      </div>
+    </div>
+
+    <div class="flex w-full items-center justify-between mt-2 ">
+      <div>
+        <div class="mb-3 text-xl font-bold">{{this.fname}} {{this.lname}}</div>
+        <div class="text-sm text-neutral-600"> {{this.function}}</div>
+      </div>
+      <div class="flex items-center ">
+        <div *ngIf="!hidden" class=" px-3 py-1 text-xs text-green-600 font-semibold">{{this.salary}} DHs</div>
+        <div *ngIf="hidden" class=" px-3 py-1 text-xs text-green-600 font-semibold">****</div>
+        <div *ngIf="!hidden" (click)="hide()" class="bx bx-hide px-3"></div>
+        <div *ngIf="hidden" (click)="hide()" class="bx bx-show px-3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="role == 'Employee'">
+  employee things
+</div>
+<div *ngIf="role == 'RH'">
+  Rh stats and cards
+</div>
