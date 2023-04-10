@@ -16,8 +16,6 @@ export class AuthenticationService {
     return this.http.post(this.apiUrl.login, credentials);
   }
 
-  loginCustomer(formData:Object): Observable<Object>{
-    return this.http.post(this.apiUrl.loginCustomer, formData)
-  }
+
 
 }

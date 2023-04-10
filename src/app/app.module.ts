@@ -11,6 +11,7 @@ import { HomeComponent } from './Pages/home/home.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { EmployeeDetailsComponent } from './Components/employee-details/employee-details.component';
 import { RegisterEmployeeComponent } from './Components/register-employee/register-employee.component';
+import { LeaveComponent } from './Components/leave/leave.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RegisterEmployeeComponent } from './Components/register-employee/regist
     HomeComponent,
     HeaderComponent,
     EmployeeDetailsComponent,
-    RegisterEmployeeComponent
+    RegisterEmployeeComponent,
+    LeaveComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,130 @@
+
+<section>
+  <div class="items-center px-3 mx-auto max-w-7xl lg:px-3 md:px-3">
+    <div class="justify-center w-full p-7 max-auto">
+      <div class="justify-start w-full text-left">
+<!--        <span class="inline-flex items-center text-black rounded-xl">-->
+<!--          <span class="font-mono text-sm" aria-hidden="true">03</span>-->
+<!--          <span class="ml-3 h-3.5 w-px bg-black"></span>-->
+<!--          <span class="ml-3 text-base font-medium tracking-tight">Tab</span>-->
+<!--        </span>-->
+        <ul class="flex gap-1 mt-6 space-x-4 text-black border-b">
+          <li class="-mb-px">
+            <button (click)="tab = 'tab1'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab1'}">
+<!--              <ion-icon name="accessibility-outline" role="img" class="md hydrated" aria-label="accessibility outline"></ion-icon>-->
+              <span class="ml-2">Requests</span>
+            </button>
+          </li>
+          <li class="-mb-px">
+            <button (click)="tab = 'tab2'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab2'}">
+<!--              <ion-icon name="people-outline" role="img" class="md hydrated" aria-label="people outline"></ion-icon>-->
+              <span class="ml-2">Upcoming</span>
+            </button>
+          </li>
+          <li class="-mb-px">
+            <button (click)="tab = 'tab3'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab3'}">
+<!--              <ion-icon name="document-outline" role="img" class="md hydrated" aria-label="document outline"></ion-icon>-->
+              <span class="ml-2">All Leave</span>
+            </button>
+          </li>
+          <li class="-mb-px">
+            <button (click)="tab = 'tab3'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab3'}">
+              <!--              <ion-icon name="document-outline" role="img" class="md hydrated" aria-label="document outline"></ion-icon>-->
+              <span class="ml-2">Documented</span>
+            </button>
+          </li>
+          <li class="-mb-px">
+            <button (click)="tab = 'tab3'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab3'}">
+              <!--              <ion-icon name="document-outline" role="img" class="md hydrated" aria-label="document outline"></ion-icon>-->
+              <span class="ml-2">Documented</span>
+            </button>
+          </li>
+          <li class="-mb-px">
+            <button (click)="tab = 'tab3'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab3'}">
+              <!--              <ion-icon name="document-outline" role="img" class="md hydrated" aria-label="document outline"></ion-icon>-->
+              <span class="ml-2">Documented</span>
+            </button>
+          </li>
+        </ul>
+        <div class="py-4 pt-4 text-left bg-white content">
+<!--          <router-outlet></router-outlet>-->
+
+          <div *ngIf="tab === 'tab1'" class="text-gray-500">
+            <main>
+              <div class="py-4">
+                <span class="inline-flex items-center text-black">
+                  <span class="font-mono text-sm" aria-hidden="true">01</span>
+                  <span class="ml-3 h-3.5 w-px bg-black"></span>
+                  <span class="ml-3 text-base font-medium tracking-tight">Tab content</span>
+                </span>
+
+                <div class="border border-gray-200 border-dashed rounded-lg h-96">
+                  <div class="flex flex-col ">
+                    <div class="sm:-mx-6 lg:-mx-8">
+                      <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+                        <div class="overflow-x-auto">
+                          <table class="min-w-full text-left text-sm font-light">
+                            <thead class="border-b font-medium dark:border-neutral-500">
+                            <tr>
+                              <th scope="col" class="px-6 py-4">#</th>
+                              <th scope="col" class="px-6 py-4">Employee</th>
+                              <th scope="col" class="px-6 py-4">Start Date</th>
+                              <th scope="col" class="px-6 py-4">End Date</th>
+                              <th scope="col" class="px-6 py-4">Number Of days</th>
+                              <th scope="col" class="px-6 py-4">Solde</th>
+                              <th scope="col" class="px-6 py-4">Type</th>
+                              <th scope="col" class="px-6 py-4">Heading</th>
+                              <th scope="col" class="px-6 py-4">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let r of requests" class="border-b dark:border-neutral-500">
+                              <td class="whitespace-nowrap px-6 py-4">{{r.employeeId}}</td>
+                              <td class="whitespace-nowrap px-6 py-4">{{r.employee.fname}}<br>{{r.employee.lname}}</td>
+                              <td class="whitespace-nowrap px-6 py-4">{{convertDateString(r.startDate)}}</td>
+                              <td class="whitespace-nowrap px-6 py-4">{{convertDateString(r.endDate)}}</td>
+                              <td class="whitespace-nowrap px-6 py-4">{{r.numbOfDays}}</td>
+                              <td class="whitespace-nowrap px-6 py-4 ">{{getLeaveSoldeByEmpId(r.employeeId)}}</td>
+                              <td class="whitespace-nowrap px-6 py-4">{{r.type}}</td>
+                              <td class="whitespace-nowrap px-6 py-4 ">Cell</td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+          <div *ngIf="tab === 'tab2'" class="text-gray-500">
+            <main>
+              <div class="py-4">
+                <span class="inline-flex items-center text-black">
+                  <span class="font-mono text-sm" aria-hidden="true">022222</span>
+                  <span class="ml-3 h-3.5 w-px bg-black"></span>
+                  <span class="ml-3 text-base font-medium tracking-tight">Tab content</span>
+                </span>
+                <div class="border border-gray-200 border-dashed rounded-lg h-96"></div>
+              </div>
+            </main>
+          </div>
+          <div *ngIf="tab === 'tab3'" class="text-gray-500">
+            <main>
+              <div class="py-4">
+                <span class="inline-flex items-center text-black">
+                  <span class="font-mono text-sm" aria-hidden="true">03333</span>
+                  <span class="ml-3 h-3.5 w-px bg-black"></span>
+                  <span class="ml-3 text-base font-medium tracking-tight">Tab content</span>
+                </span>
+                <div class="border border-gray-200 border-dashed rounded-lg h-96"></div>
+              </div>
+            </main>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--  </div>-->
+</section>

@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environment/environment";
 import {Employee} from "../models/Employee";
 import {Observable} from "rxjs";
+import {LeaveRequest} from "../models/LeaveRequest";
 
 @Injectable({
   providedIn: 'root'
@@ -22,9 +23,16 @@ export class RhService {
     return this.http.get<Account>(this.apiUrl.getEmployee,{headers})
   }
 
+  getRequests(headers: Object): Observable<LeaveRequest[]>{
+    //@ts-ignore
+    return this.http.get(this.apiUrl.getRequests,{headers})
+  }
 
 
-
+  getSoldeByEmpId(headers: Object, id: number): Observable<LeaveRequest[]>{
+    //@ts-ignore
+    return this.http.get(this.apiUrl.getRequests+''+id,{headers})
+  }
 
 
 }
