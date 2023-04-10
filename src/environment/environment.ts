@@ -7,7 +7,10 @@ export const environment = {
     getEmployee: baseUrlApi+'/rh/employee',
     getRequests: baseUrlApi+'/rh/pendingLeaveRequests',
     soldByEmpId: baseUrlApi+'/rh/LeaveSoldeByEmpId/',
+    confirmRequestById: baseUrlApi+'/rh/confirmLeave/',
+    rejectRequestById: baseUrlApi+'/rh/rejectLeave/',
+    deleteRequestById: baseUrlApi+'/rh/deleteLeave/',
 
-    
+
   }
 };

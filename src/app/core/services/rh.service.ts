@@ -29,10 +29,22 @@ export class RhService {
   }
 
 
-  getSoldeByEmpId(headers: Object, id: number): Observable<LeaveRequest[]>{
+  getSoldeByEmpId(headers: Object, id: number): Observable<Object>{
     //@ts-ignore
-    return this.http.get(this.apiUrl.getRequests+''+id,{headers})
+    return this.http.get(this.apiUrl.soldByEmpId+''+id,{headers})
   }
 
 
+  confirmRequestById(headers: Object, id: number): Observable<String> {
+    //@ts-ignore
+    return this.http.get(this.apiUrl.confirmRequestById+''+id,{headers, responseType: "text"})
+  }
+  rejectRequestById(headers: Object, id: number): Observable<String> {
+    //@ts-ignore
+    return this.http.get(this.apiUrl.rejectRequestById+''+id,{headers, responseType: "text"})
+  }
+  deleteRequestById(headers: Object, id: number): Observable<String> {
+    //@ts-ignore
+    return this.http.delete(this.apiUrl.deleteRequestById+''+id,{headers, responseType: "text"})
+  }
 }

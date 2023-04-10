@@ -12,6 +12,8 @@ import { HeaderComponent } from './Components/header/header.component';
 import { EmployeeDetailsComponent } from './Components/employee-details/employee-details.component';
 import { RegisterEmployeeComponent } from './Components/register-employee/register-employee.component';
 import { LeaveComponent } from './Components/leave/leave.component';
+import { LeaveRequestsComponent } from './Components/leave-requests/leave-requests.component';
+import { LeavesUpcomingComponent } from './Components/leaves-upcoming/leaves-upcoming.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { LeaveComponent } from './Components/leave/leave.component';
     EmployeeDetailsComponent,
     RegisterEmployeeComponent,
     LeaveComponent,
+    LeaveRequestsComponent,
+    LeavesUpcomingComponent,
   ],
   imports: [
     BrowserModule,
