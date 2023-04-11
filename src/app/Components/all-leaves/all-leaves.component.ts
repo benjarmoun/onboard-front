@@ -5,11 +5,11 @@ import {Router} from "@angular/router";
 import {RhService} from "../../core/services/rh.service";
 
 @Component({
-  selector: 'app-leaves-upcoming',
-  templateUrl: './leaves-upcoming.component.html',
-  styleUrls: ['./leaves-upcoming.component.css']
+  selector: 'app-all-leaves',
+  templateUrl: './all-leaves.component.html',
+  styleUrls: ['./all-leaves.component.css']
 })
-export class LeavesUpcomingComponent implements OnInit{
+export class AllLeavesComponent implements OnInit{
 
   request!: LeaveRequest;
   requests!: LeaveRequest[];
@@ -116,4 +116,5 @@ export class LeavesUpcomingComponent implements OnInit{
 
 
 }
+
 

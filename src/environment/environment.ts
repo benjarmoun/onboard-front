@@ -10,6 +10,7 @@ export const environment = {
     confirmRequestById: baseUrlApi+'/rh/confirmLeave/',
     rejectRequestById: baseUrlApi+'/rh/rejectLeave/',
     deleteRequestById: baseUrlApi+'/rh/deleteLeave/',
+    getUpcoming: baseUrlApi+'/rh/upcomingLeaves',
 
 
   }

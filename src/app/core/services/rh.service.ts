@@ -47,4 +47,9 @@ export class RhService {
     //@ts-ignore
     return this.http.delete(this.apiUrl.deleteRequestById+''+id,{headers, responseType: "text"})
   }
+
+  getUpcoming(headers: Object): Observable<LeaveRequest[]>{
+    //@ts-ignore
+    return this.http.get(this.apiUrl.getUpcoming,{headers})
+  }
 }

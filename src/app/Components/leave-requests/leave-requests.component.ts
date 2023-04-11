@@ -25,7 +25,6 @@ export class LeaveRequestsComponent implements OnInit{
   }
 
   getRequests() {
-    console.log("mouhcine")
     // @ts-ignore
     const token = JSON.parse(localStorage.getItem('token'))
     const headers = new HttpHeaders({

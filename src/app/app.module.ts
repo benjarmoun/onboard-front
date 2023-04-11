@@ -14,20 +14,23 @@ import { RegisterEmployeeComponent } from './Components/register-employee/regist
 import { LeaveComponent } from './Components/leave/leave.component';
 import { LeaveRequestsComponent } from './Components/leave-requests/leave-requests.component';
 import { LeavesUpcomingComponent } from './Components/leaves-upcoming/leaves-upcoming.component';
+import { AllLeavesComponent } from './Components/all-leaves/all-leaves.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginFormComponent,
-    LoginComponent,
-    HomeComponent,
-    HeaderComponent,
-    EmployeeDetailsComponent,
-    RegisterEmployeeComponent,
-    LeaveComponent,
-    LeaveRequestsComponent,
-    LeavesUpcomingComponent,
-  ],
+    declarations: [
+        AppComponent,
+        LoginFormComponent,
+        LoginComponent,
+        HomeComponent,
+        HeaderComponent,
+        EmployeeDetailsComponent,
+        RegisterEmployeeComponent,
+        LeaveComponent,
+        LeaveRequestsComponent,
+        LeavesUpcomingComponent,
+        AllLeavesComponent,
+        AllLeavesComponent,
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
