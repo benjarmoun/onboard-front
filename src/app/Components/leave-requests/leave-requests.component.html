@@ -1,16 +1,18 @@
 <main>
   <div class="py-4">
-              <span class="inline-flex items-center text-black">
-                <span class="font-mono text-sm" aria-hidden="true">01</span>
-                <span class="ml-3 h-3.5 w-px bg-black"></span>
-                <span class="ml-3 text-base font-medium tracking-tight">Tab content</span>
-              </span>
 
-    <!--                <div class="border border-gray-200 border-dashed rounded-lg h-96">-->
-    <div class="flex flex-col border border-gray-200 border-dashed rounded-lg">
+
+    <div *ngIf="requests?.length == 0" class="px-6 py-4 bg-blue-50 rounded-lg text-lg text-blue-500">
+      there are <span class="font-bold">No pending</span> leave requests
+    </div>
+
+    <div *ngIf="requests?.length!=0" class="flex flex-col border border-gray-200 border-dashed rounded-lg">
       <div class="sm:-mx-6 lg:-mx-8">
         <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
           <div class="overflow-x-auto">
+
+
+
             <table class="min-w-full text-center text-sm font-light">
               <thead class="border-b font-medium dark:border-neutral-500">
               <tr>
@@ -21,7 +23,7 @@
                 <th scope="col" class="px-6 py-4">Number <br>Of days</th>
                 <th scope="col" class="px-6 py-4">Solde</th>
                 <th scope="col" class="px-6 py-4">Type</th>
-                <th scope="col" class="px-6 py-4">Heading</th>
+<!--                <th scope="col" class="px-6 py-4">Heading</th>-->
                 <th scope="col" class="px-9 py-4">Action</th>
               </tr>
               </thead>
@@ -34,7 +36,7 @@
                 <td class="whitespace-nowrap px-6 py-4">{{r.numbOfDays}}d</td>
                 <td class="whitespace-nowrap px-6 py-4 ">{{r.solde?.solde}}d</td>
                 <td class="whitespace-nowrap px-6 py-4">{{r.type}}</td>
-                <td class="whitespace-nowrap px-6 py-4 ">{{(r.employeeId)}}</td>
+<!--                <td class="whitespace-nowrap px-6 py-4 ">{{(r.employeeId)}}</td>-->
                 <td class=" px-6 py-4 ">
                   <div class="w-1/3 h-auto">
                     <div class="flex">

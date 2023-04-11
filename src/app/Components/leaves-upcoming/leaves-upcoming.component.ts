@@ -25,7 +25,6 @@ export class LeavesUpcomingComponent implements OnInit{
   }
 
   getUpcoming() {
-    console.log("mouhcine")
     // @ts-ignore
     const token = JSON.parse(localStorage.getItem('token'))
     const headers = new HttpHeaders({
@@ -35,17 +34,6 @@ export class LeavesUpcomingComponent implements OnInit{
       (response: LeaveRequest[]) => {
         this.requests = response;
         console.log(this.requests);
-
-        // Map through each request and get the employee's leave solde
-        // this.requests.forEach((request) => {
-        //   const employeeId = request.employeeId;
-        //   this.rhService.getSoldeByEmpId(headers, request.employeeId).subscribe(
-        //     (response: Object) => {
-        //       // @ts-ignore
-        //       request.solde = response;
-        //     }
-        //   );
-        // });
       }
     )
   }

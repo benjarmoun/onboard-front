@@ -3,6 +3,7 @@ import {LeaveRequest} from "../../core/models/LeaveRequest";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {RhService} from "../../core/services/rh.service";
+import Swal from "sweetalert2"
 
 @Component({
   selector: 'app-leave-requests',
@@ -67,6 +68,15 @@ export class LeaveRequestsComponent implements OnInit{
     this.rhService.confirmRequestById(headers, id).subscribe(
       (response: String) => {
         console.log(response)
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Request confirmed',
+          showConfirmButton: false,
+          timer: 1500,
+          width: 350,
+          heightAuto : false
+        })
         this.getRequests();
       }
     )
@@ -82,6 +92,15 @@ export class LeaveRequestsComponent implements OnInit{
     this.rhService.rejectRequestById(headers, id).subscribe(
       (response: String) => {
         console.log(response)
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Request rejected',
+          showConfirmButton: false,
+          timer: 1500,
+          width: 350,
+          heightAuto : false
+        })
         this.getRequests();
       }
     )
@@ -89,17 +108,36 @@ export class LeaveRequestsComponent implements OnInit{
   }
 
   deleteRequest( id: number) {
-    // @ts-ignore
-    const token = JSON.parse(localStorage.getItem('token'))
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`
-    });
-    this.rhService.deleteRequestById(headers, id).subscribe(
-      (response: String) => {
-        console.log(response)
-        this.getRequests();
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // @ts-ignore
+        const token = JSON.parse(localStorage.getItem('token'))
+        const headers = new HttpHeaders({
+          'Authorization': `Bearer ${token}`
+        });
+        this.rhService.deleteRequestById(headers, id).subscribe(
+          (response: String) => {
+            console.log(response)
+            Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            )
+            this.getRequests();
+          }
+        )
+
       }
-    )
+    })
+
 
   }
 

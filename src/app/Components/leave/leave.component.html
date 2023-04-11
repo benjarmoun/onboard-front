@@ -3,39 +3,29 @@
   <div class="items-center px-3 mx-auto max-w-7xl lg:px-3 md:px-3">
     <div class="justify-center w-full p-7 max-auto">
       <div class="justify-start w-full text-left">
-<!--        <span class="inline-flex items-center text-black rounded-xl">-->
-<!--          <span class="font-mono text-sm" aria-hidden="true">03</span>-->
-<!--          <span class="ml-3 h-3.5 w-px bg-black"></span>-->
-<!--          <span class="ml-3 text-base font-medium tracking-tight">Tab</span>-->
-<!--        </span>-->
         <ul class="flex gap-1 mt-6 space-x-4 text-black border-b">
           <li class="-mb-px">
             <button (click)="tab = 'tab1'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab1'}">
-<!--              <ion-icon name="accessibility-outline" role="img" class="md hydrated" aria-label="accessibility outline"></ion-icon>-->
               <span class="ml-2">Requests</span>
             </button>
           </li>
           <li class="-mb-px">
             <button (click)="tab = 'tab2'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab2'}">
-<!--              <ion-icon name="people-outline" role="img" class="md hydrated" aria-label="people outline"></ion-icon>-->
               <span class="ml-2">Upcoming</span>
             </button>
           </li>
           <li class="-mb-px">
             <button (click)="tab = 'tab3'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab3'}">
-<!--              <ion-icon name="document-outline" role="img" class="md hydrated" aria-label="document outline"></ion-icon>-->
               <span class="ml-2">All Leave</span>
             </button>
           </li>
           <li class="-mb-px">
             <button (click)="tab = 'tab4'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab4'}">
-              <!--              <ion-icon name="document-outline" role="img" class="md hydrated" aria-label="document outline"></ion-icon>-->
-              <span class="ml-2">Documented</span>
+              <span class="ml-2">Request Leave</span>
             </button>
           </li>
           <li class="-mb-px">
             <button (click)="tab = 'tab5'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab5'}">
-              <!--              <ion-icon name="document-outline" role="img" class="md hydrated" aria-label="document outline"></ion-icon>-->
               <span class="ml-2">Documented</span>
             </button>
           </li>
@@ -47,7 +37,6 @@
           </li>
         </ul>
         <div class="py-4 pt-4 text-left bg-white content">
-<!--          <router-outlet></router-outlet>-->
           <div *ngIf="tab === 'tab1'" class="text-gray-500">
             <app-leave-requests></app-leave-requests>
           </div>
@@ -59,20 +48,10 @@
             <app-all-leaves></app-all-leaves>
           </div>
           <div *ngIf="tab === 'tab4'" class="text-gray-500">
-            <main>
-              <div class="py-4">
-                <span class="inline-flex items-center text-black">
-                  <span class="font-mono text-sm" aria-hidden="true">03333</span>
-                  <span class="ml-3 h-3.5 w-px bg-black"></span>
-                  <span class="ml-3 text-base font-medium tracking-tight">Tab content</span>
-                </span>
-                <div class="border border-gray-200 border-dashed rounded-lg h-96"></div>
-              </div>
-            </main>
+            <app-request-leave-form></app-request-leave-form>
           </div>
           </div>
         </div>
       </div>
     </div>
-<!--  </div>-->
 </section>

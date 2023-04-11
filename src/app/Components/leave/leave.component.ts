@@ -11,20 +11,9 @@ import {LeaveRequest} from "../../core/models/LeaveRequest";
 })
 export class LeaveComponent implements OnInit{
   tab: string = "tab1";
-  // request!: LeaveRequest;
-  // requests!: LeaveRequest[];
-  // private solde!: Object;
 
-
-
-
-  constructor(private http: HttpClient,
-              private router: Router,
-              private rhService: RhService
-  ) {}
 
   ngOnInit(): void {
-        // this.getRequests();
     }
 
 
