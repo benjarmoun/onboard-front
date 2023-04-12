@@ -14,6 +14,11 @@ export const environment = {
     requestLeave: baseUrlApi+'/rh/requestLeave',
     getALLEmployees: baseUrlApi+'/rh/allEmployees',
     deleteEmplById: baseUrlApi+'/rh/removeEmployee/',
+    getMyUpcoming: baseUrlApi+'/rh/employeeUpcomingLeaves',
+    getMyLeaves: baseUrlApi+'/rh/LeavesByEmployee',
+    addContract: baseUrlApi+'/rh/addContract',
+    EmployeesWithNoContract: baseUrlApi+'/rh/noContractEmployees',
+    allLeaves: baseUrlApi+'/rh/allLeaves',
 
 
   }

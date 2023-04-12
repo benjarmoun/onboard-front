@@ -18,6 +18,11 @@ import { AllLeavesComponent } from './Components/all-leaves/all-leaves.component
 import { RequestLeaveFormComponent } from './Components/request-leave-form/request-leave-form.component';
 import {DatepickerComponent} from "./Components/datepicker/datepicker.component";
 import { EmployeesComponent } from './Components/employees/employees.component';
+import { MyLeavesComponent } from './Components/my-leaves/my-leaves.component';
+import { MyUpcomingLeavesComponent } from './Components/my-upcoming-leaves/my-upcoming-leaves.component';
+import { AllEmployeesComponent } from './Components/all-employees/all-employees.component';
+import { AddContractComponent } from './Components/add-contract/add-contract.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 
 @NgModule({
     declarations: [
@@ -35,7 +40,12 @@ import { EmployeesComponent } from './Components/employees/employees.component';
         AllLeavesComponent,
         RequestLeaveFormComponent,
         DatepickerComponent,
-        EmployeesComponent
+        EmployeesComponent,
+        MyLeavesComponent,
+        MyUpcomingLeavesComponent,
+        AllEmployeesComponent,
+        AddContractComponent,
+        DashboardComponent
     ],
   imports: [
     BrowserModule,

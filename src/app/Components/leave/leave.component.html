@@ -26,13 +26,13 @@
           </li>
           <li class="-mb-px">
             <button (click)="tab = 'tab5'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab5'}">
-              <span class="ml-2">Documented</span>
+              <span class="ml-2">My Leaves</span>
             </button>
           </li>
           <li class="-mb-px">
             <button (click)="tab = 'tab6'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab6'}">
               <!--              <ion-icon name="document-outline" role="img" class="md hydrated" aria-label="document outline"></ion-icon>-->
-              <span class="ml-2">Documented</span>
+              <span class="ml-2">My Upcoming Leaves   </span>
             </button>
           </li>
         </ul>
@@ -49,6 +49,12 @@
           </div>
           <div *ngIf="tab === 'tab4'" class="text-gray-500">
             <app-request-leave-form></app-request-leave-form>
+          </div>
+          <div *ngIf="tab === 'tab5'" class="text-gray-500">
+            <app-my-leaves></app-my-leaves>
+          </div>
+          <div *ngIf="tab === 'tab6'" class="text-gray-500">
+            <app-my-upcoming-leaves></app-my-upcoming-leaves>
           </div>
           </div>
         </div>

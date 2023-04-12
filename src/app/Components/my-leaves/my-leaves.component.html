@@ -1,7 +1,8 @@
 <main>
   <div class="py-4">
+
     <div *ngIf="requests?.length == 0" class="px-6 py-4 bg-blue-50 rounded-lg text-lg text-blue-500">
-      there are <span class="font-bold">No leave</span> requests
+      there are <span class="font-bold">No upcoming</span> leave requests
     </div>
 
     <div *ngIf="requests?.length != 0" class="flex flex-col border border-gray-200 border-dashed rounded-lg">
@@ -18,6 +19,7 @@
                 <th scope="col" class="px-6 py-4">Number <br>Of days</th>
                 <th scope="col" class="px-6 py-4">Type</th>
                 <th scope="col" class="px-6 py-4">Status</th>
+<!--                <th scope="col" class="px-9 py-4">Action</th>-->
               </tr>
               </thead>
               <tbody>
@@ -92,6 +94,7 @@
                     <p class="whitespace-nowrap text-sm">Rejected</p>
                   </span>
                 </td>
+                <!--                <td class="whitespace-nowrap px-6 py-4 ">{{(r.employeeId)}}</td>-->
               </tr>
               </tbody>
             </table>

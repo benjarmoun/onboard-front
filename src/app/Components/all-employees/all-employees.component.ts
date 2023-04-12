@@ -1,18 +1,16 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import {Employee} from "../../core/models/Employee";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {RhService} from "../../core/services/rh.service";
-import {LeaveRequest} from "../../core/models/LeaveRequest";
 import Swal from "sweetalert2";
 
 @Component({
-  selector: 'app-employees',
-  templateUrl: './employees.component.html',
-  styleUrls: ['./employees.component.css']
+  selector: 'app-all-employees',
+  templateUrl: './all-employees.component.html',
+  styleUrls: ['./all-employees.component.css']
 })
-export class EmployeesComponent implements OnInit{
-
+export class AllEmployeesComponent {
   employees!: Employee[];
   tab: string = "tab1";
 

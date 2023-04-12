@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {RhService} from "../../core/services/rh.service";
+import Swal from "sweetalert2";
 
-class AccountService {
-}
+
 
 @Component({
   selector: 'app-register-employee',
@@ -48,10 +48,18 @@ export class RegisterEmployeeComponent {
     console.log(formData)
 
 
-      this.rhService.registerCustomer(formData,headers)
+      this.rhService.registerEmployee(formData,headers)
         .subscribe(response => {
-          console.log(response)
-          // this.router.navigate(['/']).then();
+          console.log(response);
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Employee Added',
+            showConfirmButton: false,
+            timer: 1500,
+            width: 350,
+            heightAuto : false
+          })
         });
   }
 

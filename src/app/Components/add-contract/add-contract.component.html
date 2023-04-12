@@ -1,91 +1,99 @@
 <div class='flex items-center justify-center mt-4'>
   <div class="rounded-xl border p-4 shadow-md w-full bg-white">
 
-    <form (ngSubmit)="register()">
+    <form (ngSubmit)="addContract()">
       <div class="relative mb-4 flex w-full flex-wrap items-stretch">
-        <input
+        <select
           type="text"
           class="relative m-0 block  w-[1px] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
-          [(ngModel)]="fname"
-          id="first name" name="first name"
-          placeholder="First name"
-          aria-label="First name"
-          aria-describedby="basic-addon1" />
+          [(ngModel)]="employeeId"
+          id="employee" name="employee"
+          placeholder="Employee"
+          aria-label="Employee"
+          aria-describedby="basic-addon1"
+           >
+            <option selected disabled value="">Employee</option>
+            <option *ngFor="let emp of employees" value="{{emp.id}}">{{emp.fname}} {{emp.lname}}</option>
+
+        </select>
       </div>
 
       <div class="relative mb-4 flex w-full flex-wrap items-stretch">
         <input
           type="text"
           class="relative m-0 block w-[1px] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
-          [(ngModel)]="lname"
-          id="last name" name="last name"
-          placeholder="Last name"
-          aria-label="Last name"
+          [(ngModel)]="fonction"
+          id="function" name="function"
+          placeholder="Function"
+          aria-label="Function"
           aria-describedby="basic-addon1" />
       </div>
 
       <div class="relative mb-4 flex w-full flex-wrap items-stretch">
-        <input
+        <select
           type="text"
           class="relative m-0 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
-          [(ngModel)]="email"
-          id="email" name="email"
-          placeholder="Email"
-          aria-label="Recipient's username"
-          aria-describedby="basic-addon2" />
-        <span
-          class="flex items-center whitespace-nowrap rounded-r border border-l-0 border-solid border-neutral-300 px-3 py-[0.25rem] text-center text-base font-normal leading-[1.6] text-neutral-700 dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
-          id="basic-addon2"
-        >@cegedim.com</span>
+          [(ngModel)]="type"
+          id="type" name="type"
+          placeholder="Type"
+          aria-label="Type"
+          aria-describedby="basic-addon2"
+          (change)="displayEndDate(type)"
+        >
+          <option value="CDI" selected>CDI</option>
+          <option>CDD</option>
+          <option>Freelance</option>
+        </select>
+<!--        <span-->
+<!--          class="flex items-center whitespace-nowrap rounded-r border border-l-0 border-solid border-neutral-300 px-3 py-[0.25rem] text-center text-base font-normal leading-[1.6] text-neutral-700 dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"-->
+<!--          id="basic-addon2"-->
+<!--        >@cegedim.com</span>-->
       </div>
 
       <div class="relative mb-4 flex w-full flex-wrap items-stretch">
         <input
-          type="password"
+          type="number"
           class="relative m-0 block w-[1px] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
-          [(ngModel)]="password"
-          id="password" name="password"
-          placeholder="Password"
-          aria-label="Password"
+          [(ngModel)]="salary"
+          id="salary" name="salary"
+          placeholder="Salary"
+          aria-label="Salary"
           aria-describedby="basic-addon1" />
       </div>
 
       <div class="relative mb-4 flex w-full flex-wrap items-stretch">
         <input
-          type="text"
+          type="date"
           class="relative m-0 block w-[1px] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
-          [(ngModel)]="phone"
+          [(ngModel)]="startDate"
           id="phone" name="phone"
           placeholder="Phone Number"
           aria-label="Phone Number"
           aria-describedby="basic-addon1" />
       </div>
 
-      <div class="relative mb-4 flex w-full flex-wrap items-stretch">
-        <span
-          class="flex items-center whitespace-nowrap rounded-l border border-r-0 border-solid border-neutral-300 px-3 py-[0.25rem] text-center text-base font-normal leading-[1.6] text-neutral-700 dark:border-neutral-600 dark:bg-zinc-800 dark:text-neutral-200 dark:placeholder:text-neutral-200"
-        >Address</span
-        >
-        <textarea
-          class="relative m-0 block w-[1px] min-w-0 flex-auto rounded-r border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
-          [(ngModel)]="address"
-          id="address" name="address"
-          aria-label="With textarea"></textarea>
-      </div>
+<!--      <div class="relative mb-4 flex w-full flex-wrap items-stretch">-->
+<!--        <span-->
+<!--          class="flex items-center whitespace-nowrap rounded-l border border-r-0 border-solid border-neutral-300 px-3 py-[0.25rem] text-center text-base font-normal leading-[1.6] text-neutral-700 dark:border-neutral-600 dark:bg-zinc-800 dark:text-neutral-200 dark:placeholder:text-neutral-200"-->
+<!--        >Address</span-->
+<!--        >-->
+<!--        <textarea-->
+<!--          class="relative m-0 block w-[1px] min-w-0 flex-auto rounded-r border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"-->
+<!--          [(ngModel)]="endtDate"-->
+<!--          id="address" name="address"-->
+<!--          aria-label="With textarea"></textarea>-->
+<!--      </div>-->
 
-      <div class="relative mb-4 flex w-full flex-wrap items-stretch">
-        <select
-          type="text"
+      <div *ngIf="!CDI" class="relative mb-4 flex w-full flex-wrap items-stretch">
+        <input
+          type="date"
           class="relative m-0 block w-[1px] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
-          [(ngModel)]="role"
+          [(ngModel)]="endtDate"
           id="role" name="role"
           placeholder="Role"
           aria-label="Role"
-          aria-describedby="basic-addon1" >
-          <option value="" selected disabled >Role</option>
-          <option>RH</option>
-          <option>Employee</option>
-        </select>
+          aria-describedby="basic-addon1" />
+
       </div>
       <button
         type="submit"

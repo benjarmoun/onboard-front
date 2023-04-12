@@ -1,62 +1,67 @@
-<div class="py-4 pt-4 text-left bg-white content">
-  <div class="text-gray-500">
-    <main>
-      <div class="py-4">
 
-        <div *ngIf="employees?.length == 0" class="px-6 py-4 bg-blue-50 rounded-lg text-lg text-blue-500">
-          there are <span class="font-bold">No pending</span> leave requests
-        </div>
-
-        <div *ngIf="employees?.length!=0" class="flex flex-col border border-gray-200 border-dashed rounded-lg overflow-x-auto">
-          <div class="sm:-mx-6 lg:-mx-8 ">
-            <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-              <div class="overflow-x-auto">
-
-                <table class="min-w-full text-center text-sm font-light">
-                  <thead class="border-b font-medium dark:border-neutral-500">
-                  <tr>
-                    <th scope="col" class="px-1 py-4">#</th>
-                    <th scope="col" class="px-1 py-4">Employee</th>
-                    <th scope="col" class="px-1 py-4">Email</th>
-                    <th scope="col" class="px-1 py-4">Address</th>
-                    <th scope="col" class="px-1 py-4">Phone <br>Number</th>
-                    <th scope="col" class="px-1 py-4">Role</th>
-                    <th scope="col" class="px-1 py-4">Type</th>
-                    <!--                <th scope="col" class="px-6 py-4">Heading</th>-->
-                    <th scope="col" class="px-9 py-4">Action</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr *ngFor="let emp of employees" class="border-b dark:border-neutral-500">
-                    <td class="whitespace-nowrap px-1 py-4">{{emp.id}}</td>
-                    <td class="whitespace-nowrap px-1 py-4">{{emp.fname}}<br>{{emp.lname}}</td>
-                    <td class="whitespace-nowrap px-1 py-4">{{emp.email}}</td>
-                    <td class="whitespace-nowrap px-1 py-4">{{emp.address}}</td>
-                    <td class="whitespace-nowrap px-1 py-4">{{emp.phone}}d</td>
-                    <td class="whitespace-nowrap px-1 py-4 ">{{emp.role}}d</td>
-                    <td class="whitespace-nowrap px-1 py-4">{{emp.contract? emp.contract.type:"-"}}</td>
-                    <!--                <td class="whitespace-nowrap px-6 py-4 ">{{(emp.id)}}</td>-->
-                    <td class=" px-6 py-4 ">
-                      <div class="w-1/3 h-auto">
-                        <div class="flex">
-                          <button (click)="removeEmployee(emp.id)"
-                                   type="button"
-                                   class="rounded bg-red-50 px-4 py-2 text-sm font-medium text-red-600 whitespace-nowrap"
-                          >
-                            Remove
-                          </button>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+<section>
+  <div class="items-center px-3 mx-auto max-w-7xl lg:px-3 md:px-3">
+    <div class="justify-center w-full p-7 max-auto">
+      <div class="justify-start w-full text-left">
+        <ul class="flex gap-1 mt-6 space-x-4 text-black border-b">
+          <li class="-mb-px">
+            <button (click)="tab = 'tab1'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab1'}">
+              <span class="ml-2">Employees</span>
+            </button>
+          </li>
+          <li class="-mb-px">
+            <button (click)="tab = 'tab2'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab2'}">
+              <span class="ml-2">Add An Employee</span>
+            </button>
+          </li>
+          <li class="-mb-px">
+            <button (click)="tab = 'tab3'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab3'}">
+              <span class="ml-2">Add A Contract</span>
+            </button>
+          </li>
+          <li class="-mb-px">
+            <button (click)="tab = 'tab4'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab4'}">
+              <span class="ml-2">Contracts</span>
+            </button>
+          </li>
+<!--          <li class="-mb-px">-->
+<!--            <button (click)="tab = 'tab5'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab5'}">-->
+<!--              <span class="ml-2">My Leaves</span>-->
+<!--            </button>-->
+<!--          </li>-->
+<!--          <li class="-mb-px">-->
+<!--            <button (click)="tab = 'tab6'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab6'}">-->
+<!--              <span class="ml-2">My Upcoming Leaves   </span>-->
+<!--            </button>-->
+<!--          </li>-->
+        </ul>
+        <div class="py-4 pt-4 text-left bg-white content">
+          <div *ngIf="tab === 'tab1'" class="text-gray-500">
+            <app-all-employees></app-all-employees>
           </div>
+
+          <div *ngIf="tab === 'tab2'" class="text-gray-500">
+            <app-register-employee></app-register-employee>
+          </div>
+
+          <div *ngIf="tab === 'tab3'" class="text-gray-500">
+            <app-add-contract></app-add-contract>
+          </div>
+
         </div>
       </div>
-    </main>
-
+    </div>
   </div>
-</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+

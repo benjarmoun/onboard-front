@@ -13,7 +13,7 @@ export class RhService {
 
   constructor(private http: HttpClient) {}
 
-  registerCustomer(employee: Object, headers: Object): Observable<String> {
+  registerEmployee(employee: Object, headers: Object): Observable<String> {
     //@ts-ignore
     return this.http.post(this.apiUrl.registerEmployee, employee, {headers,responseType: "text"});
   }
@@ -62,9 +62,31 @@ export class RhService {
     //@ts-ignore
     return this.http.get(this.apiUrl.getALLEmployees,{headers})
   }
+  getAllLeaves(headers: Object): Observable<LeaveRequest[]>{
+    //@ts-ignore
+    return this.http.get(this.apiUrl.allLeaves,{headers})
+  }
 
   deleteEmployeeById(headers: Object, id: number): Observable<String> {
     //@ts-ignore
     return this.http.delete(this.apiUrl.deleteEmplById+''+id,{headers, responseType: "text"})
+  }
+
+  getMyUpcoming(headers: Object): Observable<LeaveRequest[]>{
+    //@ts-ignore
+    return this.http.get(this.apiUrl.getMyUpcoming,{headers})
+  }
+  getMyLeaves(headers: Object): Observable<LeaveRequest[]>{
+    //@ts-ignore
+    return this.http.get(this.apiUrl.getMyLeaves,{headers})
+  }
+
+  addContract(formData: { fonction: string; employeeId: number; type: string; salary: number; endtDate: string; startDate: string }, headers: Object) {
+    // @ts-ignore
+    return this.http.post(this.apiUrl.addContract, formData, {headers,responseType: "text"});
+  }
+  getEmployeesWithNoContract(headers: Object): Observable<Employee[]>{
+    //@ts-ignore
+    return this.http.get(this.apiUrl.EmployeesWithNoContract,{headers})
   }
 }
