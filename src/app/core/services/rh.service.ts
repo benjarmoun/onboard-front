@@ -52,4 +52,19 @@ export class RhService {
     //@ts-ignore
     return this.http.get(this.apiUrl.getUpcoming,{headers})
   }
+
+  createLeaveRequest(formData: { endDate: string; type: string; startDate: string }, headers: Object) {
+    // @ts-ignore
+    return this.http.post(this.apiUrl.requestLeave, formData, {headers,responseType: "text"});
+  }
+
+  getALLEmployees(headers: Object): Observable<Employee[]>{
+    //@ts-ignore
+    return this.http.get(this.apiUrl.getALLEmployees,{headers})
+  }
+
+  deleteEmployeeById(headers: Object, id: number): Observable<String> {
+    //@ts-ignore
+    return this.http.delete(this.apiUrl.deleteEmplById+''+id,{headers, responseType: "text"})
+  }
 }

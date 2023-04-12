@@ -1,8 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Router} from "@angular/router";
-import {RhService} from "../../core/services/rh.service";
-import {LeaveRequest} from "../../core/models/LeaveRequest";
 
 @Component({
   selector: 'app-leave',

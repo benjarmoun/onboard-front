@@ -18,7 +18,10 @@ export class DatepickerComponent implements OnInit{
   @Output() startDate: any = new EventEmitter<string>();
   @Output() endDate: any = new EventEmitter<string>();
 
-  @Output() handleDate = new EventEmitter<object>();
+  @Output() handleDate = new EventEmitter<{
+    endDate:string,
+    startDate:string
+  }>();
 
   constructor() {}
 

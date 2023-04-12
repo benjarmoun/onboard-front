@@ -17,6 +17,7 @@ import { LeavesUpcomingComponent } from './Components/leaves-upcoming/leaves-upc
 import { AllLeavesComponent } from './Components/all-leaves/all-leaves.component';
 import { RequestLeaveFormComponent } from './Components/request-leave-form/request-leave-form.component';
 import {DatepickerComponent} from "./Components/datepicker/datepicker.component";
+import { EmployeesComponent } from './Components/employees/employees.component';
 
 @NgModule({
     declarations: [
@@ -33,7 +34,8 @@ import {DatepickerComponent} from "./Components/datepicker/datepicker.component"
         AllLeavesComponent,
         AllLeavesComponent,
         RequestLeaveFormComponent,
-        DatepickerComponent
+        DatepickerComponent,
+        EmployeesComponent
     ],
   imports: [
     BrowserModule,

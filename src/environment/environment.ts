@@ -11,6 +11,9 @@ export const environment = {
     rejectRequestById: baseUrlApi+'/rh/rejectLeave/',
     deleteRequestById: baseUrlApi+'/rh/deleteLeave/',
     getUpcoming: baseUrlApi+'/rh/upcomingLeaves',
+    requestLeave: baseUrlApi+'/rh/requestLeave',
+    getALLEmployees: baseUrlApi+'/rh/allEmployees',
+    deleteEmplById: baseUrlApi+'/rh/removeEmployee/',
 
 
   }

@@ -1,13 +1,8 @@
 <div class='flex items-center justify-center mt-4'>
   <div class="rounded-xl border p-4 shadow-md w-11/12 bg-white">
-    <!--            <div class="bg-white shadow-md rounded m-16 px-8 pt-6 pb-8 flex flex-col ">-->
 
     <form (ngSubmit)="register()">
       <div class="relative mb-4 flex w-full flex-wrap items-stretch">
-  <!--  <span-->
-  <!--    class="flex items-center whitespace-nowrap rounded-l border border-r-0 border-solid border-neutral-300 px-3 py-[0.25rem] text-center text-base font-normal leading-[1.6] text-neutral-700 dark:border-neutral-600 dark:bg-zinc-800 dark:text-neutral-200 dark:placeholder:text-neutral-200"-->
-  <!--    id="basic-addon1"-->
-  <!--  >@</span>-->
         <input
           type="text"
           class="relative m-0 block  w-[1px] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
@@ -47,7 +42,7 @@
 
       <div class="relative mb-4 flex w-full flex-wrap items-stretch">
         <input
-          type="text"
+          type="password"
           class="relative m-0 block w-[1px] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
           [(ngModel)]="password"
           id="password" name="password"
@@ -80,14 +75,18 @@
       </div>
 
       <div class="relative mb-4 flex w-full flex-wrap items-stretch">
-        <input
+        <select
           type="text"
           class="relative m-0 block w-[1px] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
           [(ngModel)]="role"
           id="role" name="role"
           placeholder="Role"
           aria-label="Role"
-          aria-describedby="basic-addon1" />
+          aria-describedby="basic-addon1" >
+          <option value="" selected disabled >Role</option>
+          <option>RH</option>
+          <option>Employee</option>
+        </select>
       </div>
       <button
         type="submit"
@@ -95,90 +94,5 @@
         Button
       </button>
     </form>
-<!--    <label-->
-<!--      for="basic-url"-->
-<!--      class="mb-2 inline-block text-neutral-700 dark:text-neutral-200"-->
-<!--    >Your vanity URL</label-->
-<!--    >-->
-<!--    <div class="relative mb-4 flex w-full flex-wrap items-stretch">-->
-<!--  <span-->
-<!--    class="flex items-center whitespace-nowrap rounded-l border border-r-0 border-solid border-neutral-300 px-3 py-[0.25rem] text-center text-base font-normal leading-[1.6] text-neutral-700 dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"-->
-<!--    id="basic-addon3"-->
-<!--  >https://example.com/users/</span-->
-<!--  >-->
-<!--      <input-->
-<!--        type="text"-->
-<!--        class="relative m-0 block w-[1px] min-w-0 flex-auto rounded-r border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"-->
-<!--        id="basic-url"-->
-<!--        aria-describedby="basic-addon3" />-->
-<!--    </div>-->
-
-<!--    <div class="relative mb-4 flex w-full flex-wrap items-stretch">-->
-<!--  <span-->
-<!--    class="flex items-center whitespace-nowrap rounded-l border border-r-0 border-solid border-neutral-300 px-3 py-[0.25rem] text-center text-base font-normal leading-[1.6] text-neutral-700 dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"-->
-<!--  >$</span-->
-<!--  >-->
-<!--      <input-->
-<!--        type="text"-->
-<!--        class="relative m-0 block w-[1px] min-w-0 flex-auto border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"-->
-<!--        aria-label="Amount (to the nearest dollar)" />-->
-<!--      <span-->
-<!--        class="rounded-4 flex items-center whitespace-nowrap border border-l-0 border-solid border-neutral-300 px-3 py-[0.25rem] text-center text-base font-normal leading-[1.6] text-neutral-700 dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"-->
-<!--      >.00</span-->
-<!--      >-->
-<!--    </div>-->
-
-<!--    <div class="relative mb-4 flex w-full flex-wrap items-stretch">-->
-<!--      <input-->
-<!--        type="text"-->
-<!--        class="relative m-0 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"-->
-<!--        placeholder="Username"-->
-<!--        aria-label="Username" />-->
-<!--      <span-->
-<!--        class="flex items-center whitespace-nowrap border border-x-0 border-solid border-neutral-300 px-3 py-[0.25rem] text-center text-base font-normal leading-[1.6] text-neutral-700 dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"-->
-<!--      >@</span-->
-<!--      >-->
-<!--      <input-->
-<!--        type="text"-->
-<!--        class="relative m-0 block w-[1px] min-w-0 flex-auto rounded-r border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"-->
-<!--        placeholder="Server"-->
-<!--        aria-label="Server" />-->
-<!--    </div>-->
-
-<!--    <div class="relative flex w-full flex-wrap items-stretch">-->
-<!--      <span-->
-<!--        class="flex items-center whitespace-nowrap rounded-l border border-r-0 border-solid border-neutral-300 px-3 py-[0.25rem] text-center text-base font-normal leading-[1.6] text-neutral-700 dark:border-neutral-600 dark:bg-zinc-800 dark:text-neutral-200 dark:placeholder:text-neutral-200"-->
-<!--      >With textarea</span-->
-<!--      >-->
-<!--      <textarea-->
-<!--        class="relative m-0 block w-[1px] min-w-0 flex-auto rounded-r border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"-->
-<!--        aria-label="With textarea"></textarea>-->
-<!--    </div>-->
-
-
-
-
-
-
-
-<!--    <form (ngSubmit)="deposit()">-->
-<!--      <div class="mx-3  mb-6">-->
-<!--        <h2 class="text-grey-darker text-xl font-bold ">DEPOSIT</h2>-->
-<!--        <h2 class="text-grey-darker text-lg font-bold p-4">Enter the amount and the recepient details.</h2>-->
-<!--        <div class="md:w-1/2 px-3 my-3">-->
-<!--          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="amount">-->
-<!--            Amount:-->
-<!--          </label>-->
-<!--          <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-1 px-4" [(ngModel)]="amount" id="amount" name="amount" type="number"  placeholder="Amount">-->
-<!--        </div>-->
-<!--        <div class="md:w-1/2 px-3">-->
-<!--          <label class="block uppercase  text-grey-darker text-xs font-bold mb-2" for="recipientAccountNumber">-->
-<!--            Account Number:-->
-<!--          </label>-->
-<!--          <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-1 px-4" [(ngModel)]="accountNumber" id="recipientAccountNumber" name="recipientAccountNumber" type="text"  placeholder="Recepient Account Number">-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <button type="submit" class=" mx-6 inline-block rounded border border-indigo-600 bg-indigo-600 w-32 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500">Submit</button>-->
-<!--    </form>-->
   </div>
 </div>

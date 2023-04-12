@@ -1,0 +1,62 @@
+<div class="py-4 pt-4 text-left bg-white content">
+  <div class="text-gray-500">
+    <main>
+      <div class="py-4">
+
+        <div *ngIf="employees?.length == 0" class="px-6 py-4 bg-blue-50 rounded-lg text-lg text-blue-500">
+          there are <span class="font-bold">No pending</span> leave requests
+        </div>
+
+        <div *ngIf="employees?.length!=0" class="flex flex-col border border-gray-200 border-dashed rounded-lg overflow-x-auto">
+          <div class="sm:-mx-6 lg:-mx-8 ">
+            <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+              <div class="overflow-x-auto">
+
+                <table class="min-w-full text-center text-sm font-light">
+                  <thead class="border-b font-medium dark:border-neutral-500">
+                  <tr>
+                    <th scope="col" class="px-1 py-4">#</th>
+                    <th scope="col" class="px-1 py-4">Employee</th>
+                    <th scope="col" class="px-1 py-4">Email</th>
+                    <th scope="col" class="px-1 py-4">Address</th>
+                    <th scope="col" class="px-1 py-4">Phone <br>Number</th>
+                    <th scope="col" class="px-1 py-4">Role</th>
+                    <th scope="col" class="px-1 py-4">Type</th>
+                    <!--                <th scope="col" class="px-6 py-4">Heading</th>-->
+                    <th scope="col" class="px-9 py-4">Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let emp of employees" class="border-b dark:border-neutral-500">
+                    <td class="whitespace-nowrap px-1 py-4">{{emp.id}}</td>
+                    <td class="whitespace-nowrap px-1 py-4">{{emp.fname}}<br>{{emp.lname}}</td>
+                    <td class="whitespace-nowrap px-1 py-4">{{emp.email}}</td>
+                    <td class="whitespace-nowrap px-1 py-4">{{emp.address}}</td>
+                    <td class="whitespace-nowrap px-1 py-4">{{emp.phone}}d</td>
+                    <td class="whitespace-nowrap px-1 py-4 ">{{emp.role}}d</td>
+                    <td class="whitespace-nowrap px-1 py-4">{{emp.contract? emp.contract.type:"-"}}</td>
+                    <!--                <td class="whitespace-nowrap px-6 py-4 ">{{(emp.id)}}</td>-->
+                    <td class=" px-6 py-4 ">
+                      <div class="w-1/3 h-auto">
+                        <div class="flex">
+                          <button (click)="removeEmployee(emp.id)"
+                                   type="button"
+                                   class="rounded bg-red-50 px-4 py-2 text-sm font-medium text-red-600 whitespace-nowrap"
+                          >
+                            Remove
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  </div>
+</div>

@@ -1,39 +1,30 @@
-
 <div class="bg-white py-6 sm:py-8 lg:py-12">
   <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-    <!-- text - start -->
-    <div class="mb-10 md:mb-16">
-      <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">Get in touch</h2>
-
-<!--      <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated.</p>-->
+    <div class="mb-4 ">
+      <h2 class=" text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">Get your leave now!</h2>
     </div>
-    <form class="mx-auto  max-w-screen-md gap-4 sm:grid-cols-2">
-      <div  class="w-1/2">
-        <label for="first-name" class="w-1/2 mb-2 inline-block text-sm text-gray-800 sm:text-base">First name*</label>
-        <select name="first-name" id="first-name" class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" >
-          <option disabled selected>Who shot first?</option>
-          <option>Han Solo</option>
-          <option>Greedo</option>
-        </select>
-      </div>
 
-      <div class="w-1/2">
-        <label  class="mb-2 inline-block text-sm text-gray-800 sm:text-base">Company</label>
+    <form  (ngSubmit)="requestLeave()" class="mx-auto  max-w-screen-md gap-4 sm:grid-cols-2">
+      <div class="w-1/2 mx-auto">
+        <label  class="mb-2 inline-block text-sm text-gray-800 sm:text-base">Leave Period</label>
         <app-datepicker (handleDate)="receiveMessage($event)"></app-datepicker>
       </div>
-
-<!--      <div class="sm:col-span-2">-->
-<!--        <label for="email" class="mb-2 inline-block text-sm text-gray-800 sm:text-base">Email*</label>-->
-<!--        <input name="email" class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" />-->
-<!--      </div>-->
-
-
-      <div class="flex items-center mt-2 justify-between sm:col-span-2">
-        <button class="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">Send</button>
+      <div  class="w-1/2 mx-auto">
+        <label for="type" class="w-1/2 mb-2 inline-block text-sm text-gray-800 sm:text-base">Leave Type</label>
+        <select [(ngModel)]="type" name="type" id="type" class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" >
+          <option value="" selected>Casual Leave</option>
+          <option>Sick Leave</option>
+          <option>Maternity Leave</option>
+          <option>Annual Leave</option>
+        </select>
+      </div>
+      <div class="w-1/2 mx-auto" >
+        <div class="flex items-center mt-4 justify-between sm:col-span-2 ">
+          <button class="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">Send</button>
+        </div>
       </div>
 
     </form>
-    <!-- form - end -->
   </div>
 </div>
 

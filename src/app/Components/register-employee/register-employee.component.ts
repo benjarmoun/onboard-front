@@ -19,7 +19,7 @@ export class RegisterEmployeeComponent {
   password!: string;
   phone!: string;
   address!: string;
-  role!: string;
+  role: string="";
 
   amount!: number;
   accountNumber!: string;
