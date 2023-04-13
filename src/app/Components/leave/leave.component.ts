@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Employee} from "../../core/models/Employee";
 
 @Component({
   selector: 'app-leave',
@@ -7,10 +8,13 @@ import {Component, OnInit} from '@angular/core';
 })
 export class LeaveComponent implements OnInit{
   tab: string = "tab1";
-
+  employee!: Employee;
 
   ngOnInit(): void {
-    }
+    // @ts-ignore
+    this.employee = JSON.parse(localStorage.getItem('employee'))
+    console.log(this.employee.role)
+  }
 
 
 

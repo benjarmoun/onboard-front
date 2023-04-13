@@ -4,17 +4,17 @@
     <div class="justify-center w-full p-7 max-auto">
       <div class="justify-start w-full text-left">
         <ul class="flex gap-1 mt-6 space-x-4 text-black border-b">
-          <li class="-mb-px">
+          <li *ngIf="employee.role == 'RH'" class="-mb-px">
             <button (click)="tab = 'tab1'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab1'}">
               <span class="ml-2">Requests</span>
             </button>
           </li>
-          <li class="-mb-px">
+          <li *ngIf="employee.role == 'RH'" class="-mb-px">
             <button (click)="tab = 'tab2'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab2'}">
               <span class="ml-2">Upcoming</span>
             </button>
           </li>
-          <li class="-mb-px">
+          <li *ngIf="employee.role == 'RH'" class="-mb-px">
             <button (click)="tab = 'tab3'"  class="inline-block py-2 font-medium" [ngClass]="{'bg-white text-blue-500 border-b-2 border-blue-500': tab === 'tab3'}">
               <span class="ml-2">All Leave</span>
             </button>
@@ -37,7 +37,7 @@
           </li>
         </ul>
         <div class="py-4 pt-4 text-left bg-white content">
-          <div *ngIf="tab === 'tab1'" class="text-gray-500">
+          <div *ngIf="tab === 'tab1' && employee.role == 'RH'" class="text-gray-500">
             <app-leave-requests></app-leave-requests>
           </div>
 
