@@ -4,6 +4,7 @@ import {environment} from "../../../environment/environment";
 import {Employee} from "../models/Employee";
 import {Observable} from "rxjs";
 import {LeaveRequest} from "../models/LeaveRequest";
+import {Contract} from "../models/Contract";
 
 @Injectable({
   providedIn: 'root'
@@ -61,6 +62,10 @@ export class RhService {
   getALLEmployees(headers: Object): Observable<Employee[]>{
     //@ts-ignore
     return this.http.get(this.apiUrl.getALLEmployees,{headers})
+  }
+  getALLContracts(headers: Object): Observable<Contract[]>{
+    //@ts-ignore
+    return this.http.get(this.apiUrl.getALLContracts,{headers})
   }
   getAllLeaves(headers: Object): Observable<LeaveRequest[]>{
     //@ts-ignore

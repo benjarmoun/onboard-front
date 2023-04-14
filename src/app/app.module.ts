@@ -23,6 +23,9 @@ import { MyUpcomingLeavesComponent } from './Components/my-upcoming-leaves/my-up
 import { AllEmployeesComponent } from './Components/all-employees/all-employees.component';
 import { AddContractComponent } from './Components/add-contract/add-contract.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { ProfileComponent } from './Components/profile/profile.component';
+import { AllContractsComponent } from './Components/all-contracts/all-contracts.component';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 
 @NgModule({
     declarations: [
@@ -45,13 +48,20 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
         MyUpcomingLeavesComponent,
         AllEmployeesComponent,
         AddContractComponent,
-        DashboardComponent
+        DashboardComponent,
+        ProfileComponent,
+        AllContractsComponent,
+
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground: true,
+    }),
+    NgxUiLoaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

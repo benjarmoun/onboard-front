@@ -84,6 +84,8 @@ export class AddContractComponent implements OnInit{
 
 
   displayEndDate(type: string) {
-    type == ("CDD"|| "Freelance" ) ? this.CDI = false : this.CDI = true;
+    if(type == "CDD" || type == "Freelance")
+      this.CDI = false
+    else this.CDI = true
   }
 }

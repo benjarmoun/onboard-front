@@ -3,11 +3,11 @@
     <main>
       <div class="">
 
-        <div *ngIf="employees?.length == 0" class="px-6 py-4 bg-blue-50 rounded-lg text-lg text-blue-500">
-          there are <span class="font-bold">No employeess</span>
+        <div *ngIf="contracts?.length == 0" class="px-6 py-4 bg-blue-50 rounded-lg text-lg text-blue-500">
+          there are <span class="font-bold">No Contracts</span>
         </div>
 
-        <div *ngIf="employees?.length!=0" class="flex flex-col border border-gray-200 border-dashed rounded-lg">
+        <div *ngIf="contracts?.length!=0" class="flex flex-col border border-gray-200 border-dashed rounded-lg">
           <div class="sm:-mx-6 lg:-mx-8 ">
             <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
               <div class="overflow-x-auto">
@@ -17,26 +17,26 @@
                   <tr>
                     <th scope="col" class="px-1 py-4">#</th>
                     <th scope="col" class="px-1 py-4">Employee</th>
-                    <th scope="col" class="px-1 py-4">Email</th>
-                    <th scope="col" class="px-1 py-4">Address</th>
-                    <th scope="col" class="px-1 py-4">Phone <br>Number</th>
+                    <th scope="col" class="px-1 py-4">Start Date</th>
+                    <th scope="col" class="px-1 py-4">End Date</th>
+                    <th scope="col" class="px-1 py-4">Contract <br>Type</th>
                     <th scope="col" class="px-1 py-4">Role</th>
-                    <th scope="col" class="px-1 py-4">Type</th>
+                    <th scope="col" class="px-1 py-4">Salary</th>
                     <!--                <th scope="col" class="px-6 py-4">Heading</th>-->
-                    <th scope="col" class="px-1 py-4">Action</th>
+<!--                    <th scope="col" class="px-1 py-4">Action</th>-->
                   </tr>
                   </thead>
                   <tbody>
-                  <tr *ngFor="let emp of employees" class="border-b dark:border-neutral-500">
+                  <tr *ngFor="let emp of contracts" class="border-b dark:border-neutral-500">
                     <td class="whitespace-nowrap px-1 py-4">{{emp.id}}</td>
-                    <td class="whitespace-nowrap px-1 py-4">{{emp.fname}}<br>{{emp.lname}}</td>
-                    <td class="whitespace-nowrap px-1 py-4">{{emp.email}}</td>
-                    <td class="whitespace-nowrap px-1 py-4">{{emp.address}}</td>
-                    <td class="whitespace-nowrap px-1 py-4">{{emp.phone}}</td>
-                    <td class="whitespace-nowrap px-1 py-4 ">{{emp.role}}</td>
-                    <td class="whitespace-nowrap px-1 py-4">{{emp.contract? emp.contract.type:"-"}}</td>
+                    <td class="whitespace-nowrap px-1 py-4">{{emp.fname<br>{{emp.lname</td>
+                    <td class="whitespace-nowrap px-1 py-4">{{emp.startDate}}</td>
+                    <td class="whitespace-nowrap px-1 py-4">{{emp.endDate}}</td>
+                    <td class="whitespace-nowrap px-1 py-4">{{emp.type}}</td>
+                    <td class="whitespace-nowrap px-1 py-4 ">{{emp.fonction}}</td>
+                    <td class="whitespace-nowrap px-1 py-4">{{emp.salary}}DHs</td>
                     <!--                <td class="whitespace-nowrap px-6 py-4 ">{{(emp.id)}}</td>-->
-                    <td class=" px-1 py-4 ">
+                    <!--<td class=" px-1 py-4 ">
                       <div class="m-auto h-auto">
                         <div class="">
                           <button (click)="removeEmployee(emp.id)"
@@ -47,7 +47,7 @@
                           </button>
                         </div>
                       </div>
-                    </td>
+                    </td>-->
                   </tr>
                   </tbody>
                 </table>
@@ -57,6 +57,5 @@
         </div>
       </div>
     </main>
-
   </div>
 </div>

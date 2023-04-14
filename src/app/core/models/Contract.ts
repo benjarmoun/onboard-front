@@ -4,5 +4,5 @@ export interface Contract {
   type: String,
   fonction: String,
   startDate: Date,
-  endtDate: Date
+  endDate: Date
 }

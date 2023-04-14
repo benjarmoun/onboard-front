@@ -7,7 +7,7 @@ import {Employee} from "../../core/models/Employee";
   styleUrls: ['./leave.component.css']
 })
 export class LeaveComponent implements OnInit{
-  tab: string = "tab1";
+  tab: string = "tab6";
   employee!: Employee;
 
   ngOnInit(): void {

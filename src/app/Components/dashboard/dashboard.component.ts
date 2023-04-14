@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {RhService} from "../../core/services/rh.service";
 import {LeaveRequest} from "../../core/models/LeaveRequest";
+import {Contract} from "../../core/models/Contract";
 
 @Component({
   selector: 'app-dashboard',
@@ -15,6 +16,8 @@ export class DashboardComponent implements OnInit{
   leaves!: LeaveRequest[];
   numberOfEmployees!: number;
   numberOfLeaves!: number;
+  numberOfContracts!: number;
+  numberOfRequests!: number;
 
 
 
@@ -26,6 +29,8 @@ export class DashboardComponent implements OnInit{
   ngOnInit(): void {
     this.getEmployees();
     this.getLeaves();
+    this.getContracts();
+    this.getRequests();
   }
 
   getEmployees(){
@@ -43,6 +48,21 @@ export class DashboardComponent implements OnInit{
     )
   }
 
+  getContracts(){
+    // @ts-ignore
+    const token = JSON.parse(localStorage.getItem('token'))
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    this.rhService.getALLContracts(headers).subscribe(
+      (response: Contract[]) => {
+        this.numberOfContracts = response.length;
+        console.log(this.numberOfContracts);
+
+      }
+    )
+  }
+
   getLeaves(){
     // @ts-ignore
     const token = JSON.parse(localStorage.getItem('token'))
@@ -53,6 +73,22 @@ export class DashboardComponent implements OnInit{
       (response: LeaveRequest[]) => {
         this.numberOfLeaves = response.length;
         console.log(this.numberOfLeaves);
+
+      }
+    )
+  }
+
+  getRequests() {
+    // @ts-ignore
+    const token = JSON.parse(localStorage.getItem('token'))
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    this.rhService.getRequests(headers).subscribe(
+      (response: LeaveRequest[]) => {
+        this.numberOfRequests = response.length;
+        console.log(this.numberOfRequests);
+
 
       }
     )
