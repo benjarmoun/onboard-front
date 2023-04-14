@@ -26,6 +26,7 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { AllContractsComponent } from './Components/all-contracts/all-contracts.component';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import { DashboardEmployeeComponent } from './Components/dashboard-employee/dashboard-employee.component';
 
 @NgModule({
     declarations: [
@@ -51,6 +52,7 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
         DashboardComponent,
         ProfileComponent,
         AllContractsComponent,
+        DashboardEmployeeComponent,
 
     ],
   imports: [

@@ -16,8 +16,12 @@ export class DashboardComponent implements OnInit{
   leaves!: LeaveRequest[];
   numberOfEmployees!: number;
   numberOfLeaves!: number;
+  numberOfLeavesEmp!: number;
   numberOfContracts!: number;
   numberOfRequests!: number;
+  requestsNumb!: number;
+  solde!: number;
+  employee!: Employee;
 
 
 
@@ -27,10 +31,19 @@ export class DashboardComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    this.getEmployees();
-    this.getLeaves();
-    this.getContracts();
-    this.getRequests();
+    // @ts-ignore
+    this.employee = JSON.parse(localStorage.getItem('employee'))
+    console.log(this.employee.role)
+    if(this.employee.role =="RH"){
+      this.getEmployees();
+      this.getLeaves();
+      this.getContracts();
+      this.getRequests();
+    }else {
+      this.getSolde();
+      this.getLeavesEmp();
+      this.getMyUpcoming();
+    }
   }
 
   getEmployees(){
@@ -88,9 +101,64 @@ export class DashboardComponent implements OnInit{
       (response: LeaveRequest[]) => {
         this.numberOfRequests = response.length;
         console.log(this.numberOfRequests);
+      }
+    )
+  }
 
+  getSolde() {
+    // @ts-ignore
+    const token = JSON.parse(localStorage.getItem('token'))
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    this.rhService.getSolde(headers).subscribe(
+      (response: { solde:number }) => {
+        this.solde = response.solde;
+        console.log(response.solde);
+      }
+    )
+  }
+
+  getLeavesEmp(){
+    // @ts-ignore
+    const token = JSON.parse(localStorage.getItem('token'))
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    this.rhService.getMyLeaves(headers).subscribe(
+      (response: LeaveRequest[]) => {
+        this.numberOfLeavesEmp = response.length;
+        console.log(this.numberOfLeavesEmp);
 
       }
     )
   }
+
+  getMyUpcoming() {
+    // @ts-ignore
+    const token = JSON.parse(localStorage.getItem('token'))
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    this.rhService.getMyUpcoming(headers).subscribe(
+      (response: LeaveRequest[]) => {
+        this.requestsNumb = response.length;
+        console.log(this.requestsNumb);
+      }
+    )
+  }
+
+  // getRequests() {
+  //   // @ts-ignore
+  //   const token = JSON.parse(localStorage.getItem('token'))
+  //   const headers = new HttpHeaders({
+  //     'Authorization': `Bearer ${token}`
+  //   });
+  //   this.rhService.getRequests(headers).subscribe(
+  //     (response: LeaveRequest[]) => {
+  //       this.numberOfRequests = response.length;
+  //       console.log(this.numberOfRequests);
+  //     }
+  //   )
+  // }
 }

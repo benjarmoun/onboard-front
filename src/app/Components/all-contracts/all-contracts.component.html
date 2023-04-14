@@ -28,10 +28,10 @@
                   </thead>
                   <tbody>
                   <tr *ngFor="let emp of contracts" class="border-b dark:border-neutral-500">
-                    <td class="whitespace-nowrap px-1 py-4">{{emp.id}}</td>
-                    <td class="whitespace-nowrap px-1 py-4">{{emp.fname<br>{{emp.lname</td>
+                    <td class="whitespace-nowrap px-1 py-4">{{emp.employee.id}}</td>
+                    <td class="whitespace-nowrap px-1 py-4">{{emp.employee.fname}}<br>{{emp.employee.lname}}</td>
                     <td class="whitespace-nowrap px-1 py-4">{{emp.startDate}}</td>
-                    <td class="whitespace-nowrap px-1 py-4">{{emp.endDate}}</td>
+                    <td class="whitespace-nowrap px-1 py-4">{{emp.endDate ? emp.endDate : "-"}}</td>
                     <td class="whitespace-nowrap px-1 py-4">{{emp.type}}</td>
                     <td class="whitespace-nowrap px-1 py-4 ">{{emp.fonction}}</td>
                     <td class="whitespace-nowrap px-1 py-4">{{emp.salary}}DHs</td>

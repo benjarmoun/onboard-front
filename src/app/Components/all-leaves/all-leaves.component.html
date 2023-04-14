@@ -12,7 +12,7 @@
               <thead class="border-b font-medium dark:border-neutral-500">
               <tr>
                 <th scope="col" class="px-6 py-4">#</th>
-                <th scope="col" class="px-6 py-4">Employee</th>
+<!--                <th scope="col" class="px-6 py-4">Employee</th>-->
                 <th scope="col" class="px-6 py-4">Start Date</th>
                 <th scope="col" class="px-6 py-4">End Date</th>
                 <th scope="col" class="px-6 py-4">Number <br>Of days</th>
@@ -23,7 +23,7 @@
               <tbody>
               <tr *ngFor="let r of requests" class="border-b dark:border-neutral-500">
                 <td class="whitespace-nowrap px-6 py-4">{{r.employeeId}}</td>
-                <td class="whitespace-nowrap px-6 py-4">{{r.employee.fname}}<br>{{r.employee.lname}}</td>
+<!--                <td class="whitespace-nowrap px-6 py-4">{{r.employee.fname}}<br>{{r.employee.lname}}</td>-->
                 <td class="whitespace-nowrap px-6 py-4">{{convertDateString(r.startDate)}}</td>
                 <td class="whitespace-nowrap px-6 py-4">{{convertDateString(r.endDate)}}</td>
                 <td class="whitespace-nowrap px-6 py-4">{{r.numbOfDays}}d</td>

@@ -30,10 +30,10 @@ export class AllLeavesComponent implements OnInit{
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
-    this.rhService.getUpcoming(headers).subscribe(
+    this.rhService.getAllLeaves(headers).subscribe(
       (response: LeaveRequest[]) => {
         this.requests = response;
-        console.log(this.requests);
+        console.log(response);
 
         // Map through each request and get the employee's leave solde
         // this.requests.forEach((request) => {

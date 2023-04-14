@@ -29,6 +29,11 @@ export class RhService {
     return this.http.get(this.apiUrl.getRequests,{headers})
   }
 
+  getSolde(headers: Object): Observable<{ solde:number }>{
+    //@ts-ignore
+    return this.http.get(this.apiUrl.soldByEmp,{headers})
+  }
+
 
   getSoldeByEmpId(headers: Object, id: number): Observable<Object>{
     //@ts-ignore
